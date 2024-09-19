@@ -13,9 +13,9 @@ struct CustomTextField: View {
     @Binding var text: String
     var icon: String
     var placeholder: String
-    var isSecure: Bool // Passed externally to determine if the field should be secure initially
+    var isSecure: Bool
     
-    @State private var isSecured: Bool // Internal state for toggling visibility
+    @State private var isSecured: Bool
     @FocusState private var isFocused: Bool
     
     init(text: Binding<String>, icon: String, placeholder: String, isSecure: Bool) {
@@ -23,7 +23,7 @@ struct CustomTextField: View {
         self.icon = icon
         self.placeholder = placeholder
         self.isSecure = isSecure
-        self._isSecured = State(initialValue: isSecure) // Initialize with the passed value
+        self._isSecured = State(initialValue: isSecure)
     }
     
     var body: some View {
